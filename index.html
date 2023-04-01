@@ -16,10 +16,44 @@
       unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
     }
 
-    .textStyle {
+    .header {
       font-family: 'Signika', sans-serif;
       font-size: 48px;
+      background-color:rgba(202, 159, 201,.6);
     }
+
+    .white_alpha60 {
+      background-color: rgba(255,255,255,.6);
+    }
+
+    .topPadding {
+      margin-top: 100;
+      padding-top: 100;
+    }
+
+    #bubble{
+      margin-top: 27px;
+    }
+
+    .purple_bkgrnd {
+      background-color: rgba(121, 43, 119, 0.8) !important;
+    }
+
+    .purple_border {
+      border-color: rgba(202, 159, 201, 1) !important;
+    }
+
+    body {
+      background-image: url(images/bacteria.png);
+      background-repeat: repeat;
+    }
+
+    .center {
+      text-align: center;
+      padding: 20px;
+      font-style: italic;
+    }
+
   </style>
 </head>
 
@@ -27,19 +61,19 @@
 
   <div class="container">
     <div class="row">
-      <div class="col-md-12 jumbotron text-center">
-        <h1 class="textStyle">Belly Button Biodiversity Dashboard</h1>
-        <p class="textStyle">Use the interactive charts below to explore the dataset</p>
+      <div class="col-md-12 jumbotron text-center header">
+        <h1>Belly Button Biodiversity Dashboard</h1>
+        <p><em>Use the interactive charts below to explore the dataset</em></p>
       </div>
     </div>
     <div class="row">
       <div class="col-md-2">
-        <div class="well">
+        <div class="well white_alpha60">
           <h5>Test Subject ID No.:</h5>
           <select id="selDataset" onchange="optionChanged(this.value)"></select>
         </div>
-        <div class="panel panel-primary">
-          <div class="panel-heading">
+        <div class="panel panel-primary white_alpha60 purple_border">
+          <div class="panel-heading purple_bkgrnd">
             <h3 class="panel-title">Demographic Info</h3>
           </div>
           <div id="sample-metadata" class="panel-body"></div>
@@ -52,17 +86,17 @@
         <div id="gauge"></div>
       </div>
     </div>
-    <div class="row">
+    <div class="row topPadding">
       <div class="col-md-12">
         <div id="bubble"></div>
       </div>
     </div>
+    <div class=center>Data retrieved from: http://robdunnlab.com/projects/belly-button-biodiversity/results-and-data<br> Hulcr, J. et al. (2012) A Jungle in There: Bacteria in Belly Buttons are Highly Diverse, but Predictable.</div>
   </div>
 
   <script src="https://d3js.org/d3.v5.min.js"></script>
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   <script src="./static/js/app.js"></script>
-  <script src="./static/js/bonus.js"></script>
   
 </body>
 
