@@ -77,6 +77,9 @@ function buildSampleMetadata(sample) {
 
 };
 
+// Set status of Plotly controls
+let toggleStatus = false;
+
 // Function that builds the bar chart
 function buildBarChart(sample) {
 
@@ -128,7 +131,7 @@ function buildBarChart(sample) {
         };
 
         // Call Plotly to plot the bar chart
-        Plotly.newPlot("bar", [trace1], layout1)
+        Plotly.newPlot("bar", [trace1], layout1, {displayModeBar: toggleStatus})
     });
 };
 
@@ -179,7 +182,7 @@ function buildBubbleChart(sample) {
         };
 
         // Call Plotly to plot the bubble chart
-        Plotly.newPlot("bubble", [trace2], layout2)
+        Plotly.newPlot("bubble", [trace2], layout2, {displayModeBar: toggleStatus})
     });
 };
 
@@ -238,7 +241,7 @@ function buildGaugeChart(sample) {
         };
 
         // Call Plotly to plot the gauge chart
-        Plotly.newPlot("gauge", [trace3], layout3)
+        Plotly.newPlot("gauge", [trace3], layout3, {displayModeBar: toggleStatus})
     });
 };
 
